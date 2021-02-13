@@ -127,7 +127,7 @@ export default class PeriodDay extends Component {
 
     if (marking) {
       containerStyle.push({
-        borderRadius: 17,
+        borderRadius: 8,
         overflow: 'hidden'
       });
 
@@ -150,21 +150,27 @@ export default class PeriodDay extends Component {
           backgroundColor: this.theme.calendarBackground
         };
         rightFillerStyle = {
-          backgroundColor: flags.startingDay.color
+          backgroundColor: '#EDEEF2'
         };
         containerStyle.push({
           backgroundColor: flags.startingDay.color
         });
+        textStyle.push({
+          fontWeight: 'bold'
+        })
       } else if (flags.endingDay && !flags.startingDay) {
         rightFillerStyle = {
           backgroundColor: this.theme.calendarBackground
         };
         leftFillerStyle = {
-          backgroundColor: flags.endingDay.color
+          backgroundColor: '#EDEEF2'
         };
         containerStyle.push({
           backgroundColor: flags.endingDay.color
         });
+        textStyle.push({
+          fontWeight: 'bold'
+        })
       } else if (flags.day) {
         leftFillerStyle = {backgroundColor: flags.day.color};
         rightFillerStyle = {backgroundColor: flags.day.color};
@@ -179,6 +185,9 @@ export default class PeriodDay extends Component {
         containerStyle.push({
           backgroundColor: flags.endingDay.color
         });
+        textStyle.push({
+          fontWeight: 'bold'
+        })
       }
 
       fillers = (
